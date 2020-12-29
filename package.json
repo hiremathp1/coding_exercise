@@ -1,0 +1,40 @@
+{
+	"name": "code-test",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "babel-node spec/run.js",
+		"build": "webpack --config webpack.config.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@babel/core": "^7.12.10",
+		"@babel/node": "^7.12.10",
+		"@babel/polyfill": "^7.12.1",
+		"@babel/preset-env": "^7.12.11",
+		"@babel/register": "^7.12.10",
+		"babel-loader": "^8.2.2",
+		"express": "^4.17.1",
+		"node-fetch": "^2.6.1"
+	},
+	"devDependencies": {
+		"babel-register": "^6.26.0",
+		"browserify": "^17.0.0",
+		"jasmine": "^3.6.3",
+		"karma": "^4.0.1",
+		"karma-babel-preprocessor": "^8.0.1",
+		"karma-browserify": "^8.0.0",
+		"karma-chrome-launcher": "^3.1.0",
+		"karma-jasmine": "^4.0.1",
+		"karma-phantomjs-launcher": "^1.0.4",
+		"karma-requirejs": "^1.1.0",
+		"karma-webpack": "^4.0.2",
+		"phantomjs-prebuilt": "^2.1.16",
+		"webpack": "4.44.2",
+		"webpack-cli": "^4.2.0",
+		"webpack-karma-jasmine": "^4.0.0",
+		"webpack-node-externals": "^2.5.2"
+	}
+}
