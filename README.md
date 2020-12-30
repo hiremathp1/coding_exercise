@@ -59,3 +59,21 @@ The endpoint accepts the following options:
 5. Avoid using any `for` or `while` loops.
 6. Feel free to use external resources for help but please do not copy any solutions from online--we would like to see your solution and thought process.
 7. Please delete the `node_modules` folder before zipping and submitting your solution.
+
+## Results: 
+* All test cases passed
+Description: As per the task all 5 test cases are satisfied.
+![Overview](./Screenshots/final.png "Final") *Overview*
+
+* Console.log(data)
+Description: `retrive` data .
+![Overview](./Screenshots/logdata.png "logdata") *Overview*
+
+## Error Fix:
+Description: Intial test run was not successfull was not able to load modules due to environment may be, I did fix please see the respective images below.
+
+* When in did run test  `npm test`, had some Issues on ES module load as shown in below image.
+![Overview](./Screenshots/testfail.png "testfail") *Overview*
+
+
+
