@@ -61,19 +61,102 @@ The endpoint accepts the following options:
 7. Please delete the `node_modules` folder before zipping and submitting your solution.
 
 ## Results: 
-* All test cases passed
-Description: As per the task all 5 test cases are satisfied.
-![Overview](./Screenshots/final.png "Final") *Overview*
+* All test cases passed.
+![Overview](./Screenshots/final.png "Final") 
 
-* Console.log(data)
-Description: `retrive` data .
-![Overview](./Screenshots/logdata.png "logdata") *Overview*
+* Console.log(data)`retrive` data .
+![Overview](./Screenshots/logdata.png "logdata") 
 
 ## Error Fix:
-Description: Intial test run was not successfull was not able to load modules due to environment may be, I did fix please see the respective images below.
+Description: The initial test run was not successful, it was throwing a syntax error as shown below.
 
-* When in did run test  `npm test`, had some Issues on ES module load as shown in below image.
-![Overview](./Screenshots/testfail.png "testfail") *Overview*
+* When I run test, had some Issues with the ES module load as shown in the below image.
+![Overview](./Screenshots/testfail.png "testfail") 
 
+* Did the following steps to fix the issue.
+``` bash
+ * commented the 2nd line in webpack.config.js and removed the comments on 1st line.
+ * added babel file (.babelrc)
+ * npm run build
+ * npm run test
+ ```      
+ * The only file I changed apart from /api/accouts.js is webpack.config.js 
+![Overview](./Screenshots/changes.png "changes") 
+
+
+## Solution for given task:
+1. Write a function called `retrieve` in `api/accounts.js` that consumes the `/accounts` API to return pages of 5 items.
+``` bash
+API endpoint `http://localhost:3000/account` returns array of accounts which length is `count`(default 100) from `offset`
+
+`retrieve` function should be return `5` accounts 
+
+```
+2. The `retrieve` function should accept an options object containing the following key:
+``` bash
+function `retrieve`  has `options` parameter which contains `page` key. if not supplied default is `1`
+
+```
+3. If an error is encountered log the error with `console.log` and recover.
+``` bash
+in `retrieve` if error occurs then should `console.log` and return empty value.
+
+```
+4. On a successful request, transform the payload into an object with the following keys:
+``` bash
+`retrieve` function should return JSON as following format: 
+
+{
+    accounts: ["25122540", "67910578", "20239427", "91721163", "55898217"],  // 5 account numbers
+
+    
+        a. netAccounts should contain original account info from `/account` api endpoint, 
+        b. also contains `netDeposits` which sum of 'deposit`s subtract sum of `withdrawal`s in 'transactions'
+    
+    netAccounts: [                                                           
+        {
+            account: "25122540",
+            accountName: "32552392",
+            routingNumber: "731830633",
+            transactions: [
+                { transactionType: "withdrawal", amount: 125.05 },
+                { transactionType: "withdrawal", amount: 741.16 },
+                { transactionType: "withdrawal", amount: 983.55 },
+                { transactionType: "withdrawal", amount: 159.95 },
+                { transactionType: "deposit", amount: 443.22 }
+            ],           
+            netDeposits: -1566.49
+        },
+        ........        
+    ],
+   
+    nextPage: 1,              // nextPage number if exist otherwise null
+    previousPage: null        // prev page number if exists otherwise null
+}
+
+```
+5. Return a promise from your `retrieve` function that resolves with the transformed data.
+``` bash
+`retrieve` function have to return `promise` 
+
+```
+
+
+## References 
+* This task repo is available on my github. 
+``` bash
+https://github.com/hiremathp1/coding_exercise.git
+
+```
+
+* I have worked on Node, API, Javascript please visit here
+
+``` bash
+https://github.com/isseclab-udayton/static_analysis.git
+https://github.com/isseclab-udayton/dynamic_analysis.git
+https://github.com/isseclab-udayton/datacollection_api.git
+
+
+```
 
 
